@@ -1,26 +1,26 @@
 react 生命周期:https://www.jianshu.com/p/4784216b8194
-componentWillMount() {//dom生成前
+componentWillMount() {//dom生成前,可以setState
         alert("componentWillMount");
     }
 
-    componentDidMount() {//render之后,等于是dom生成
+    componentDidMount() {//render之后,等于是dom生成,可以setState
         alert("componentDidMount");
     }
 
-    componentWillReceiveProps(nextProps) {//父级改变props之后 的第一步,state改变不会产生这步
+    componentWillReceiveProps(nextProps) {//父级改变props之后 的第一步,state改变不会产生这步,可以setState
         alert("componentWillReceiveProps");
     }
 
-    shouldComponentUpdate() {//父级改变props之后 的第二步,可以改为false,让子组件不进行更新,当页面不会随着props变化页面布局的时候
+    shouldComponentUpdate() {//父级改变props之后 的第二步,可以改为false,让子组件不进行更新,当页面不会随着props变化页面布局的时候,不可以setState
         alert("shouldComponentUpdate");
         return true;        // 记得要返回true
     }
 
-    componentWillUpdate() {//父级改变props之后 的第三步
+    componentWillUpdate() {//父级改变props之后 的第三步,不可以setState
         alert("componentWillUpdate");
     }
 
-    componentDidUpdate() {//父级改变props之后 的第三步之后 会先进入子组件的render,之后到该步
+    componentDidUpdate() {//父级改变props之后 的第三步之后 会先进入子组件的render,之后到该步,不可以setState
         alert("componentDidUpdate");
     }
 
