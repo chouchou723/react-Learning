@@ -7,11 +7,54 @@ import b2 from 'images/zuozu.jpg';
 import b3 from 'images/xiaoying.jpg';
 import b4 from 'images/chutian.jpg';
 import './index.less'
+// const FormItem = Form.Item;
+ 
+ const Greeting = () => <div>Hi there!</div>;
+ class index extends React.Component {
+    // handleSubmit = (e) => {
+    //     e.preventDefault();
 
-export default class index extends React.Component {
+    //     let n = this.props.form.getFieldsValue().username;
+    //     let p = this.props.form.getFieldsValue().password;
+    //     if (n === '123' && p === '123') {
+    //         // 表单的路由处理
+    //         history.push('/index');
+    //     } else {
+    //         this.openNotificationWithIcon('info');
+    //     }
+    // }
+
+    // 返回一个弹框对象，提示用户名和密码
+    // openNotificationWithIcon = (type) => {
+    //     return notification[type]({
+    //              message: '用户名&密码',
+    //              description: '都是：123',
+    //              duration: 6,
+    //              icon: <Icon type="smile-circle" style={{ color: '#108ee9' }} />,
+    //            })
+    // }
+
+    componentDidMount() {
+        console.log(this.props)
+        // this.openNotificationWithIcon('info');
+    }
+
     render() {
+
+         // const { getFieldDecorator } = this.props.form;
+    //      const formItemLayout = {
+    //   labelCol: {
+    //     xs: { span: 24 },
+    //     sm: { span: 6 },
+    //   },
+    //   wrapperCol: {
+    //     xs: { span: 24 },
+    //     sm: { span: 18 },
+    //   },
+    // };
         return (
             <div>
+             <Greeting />
                 <Row gutter={10}>
                     <Col span={4}>
                         <div className="cloud-box">
@@ -158,8 +201,10 @@ export default class index extends React.Component {
                             </Card>
                         </div>
                     </Col>
+                    
                 </Row>
             </div>
         )
     }
 }
+export default index;

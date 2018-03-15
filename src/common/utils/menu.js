@@ -40,8 +40,8 @@ export const allMenu = [
     children: [
       { name: '更多模块开发中', url: 'todo' },
     ],
-  }, {
-    name: '项目地址',
-    url: 'follow',
+  },{
+    name: '个人调试',
+    url: 'chouchou',
     icon: 'heart-o',
   }]

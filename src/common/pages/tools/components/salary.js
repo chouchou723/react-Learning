@@ -18,6 +18,7 @@ export default class Salary extends React.Component {
     }
 
     handleChange = (e) => {
+      console.log(e)
   		const input = e.target.value;
   		if (handleonce && input >= 10000) {
         handleonce = false;

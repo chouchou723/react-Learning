@@ -13,7 +13,9 @@ export default class FilterLink extends React.Component {
   onClick = () => {
     this.props.dispatch(setVisibility({filter: this.props.filter}))
   }
-
+ componentDidMount() {
+        console.log(this.props)
+    }
   render() {
     const { name,filter } = this.props
     const active = this.props.setVisibility.filter === filter

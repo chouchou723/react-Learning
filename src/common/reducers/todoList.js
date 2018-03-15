@@ -33,7 +33,6 @@ const todoListInit = [{
     text: 'reading',
     completed: true,
   }]
-
 export const todoList = handleActions({
   'ADD_TODO'(state, action) {
     return [
@@ -46,6 +45,10 @@ export const todoList = handleActions({
   },
   'DEL_TODO'(state, action) {
     return state.filter(t => t.id !== action.payload.id)
+  },
+  'AAA_TODO'(state, action) {
+    console.log(action.val)
+    return state
   }
 }, todoListInit)
 

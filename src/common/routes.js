@@ -6,13 +6,15 @@ import Login from 'pages/login'
 import createBrowserHistory from 'history/createBrowserHistory'
 
 const customHistory = createBrowserHistory()
-
+let a = localStorage.getItem('login');
+console.log(a)
+const to  = a==='1'?'/index':'/login';
 const routes = (
   <HashRouter history={customHistory} >
     <div>
+      <Redirect from="/" to={to} />
       <Route path="/" component={Container} />
       <Route path="/login" component={Login} />
-      <Redirect from='*' to='/login' />
     </div>
   </HashRouter>
 )

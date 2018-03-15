@@ -9,9 +9,9 @@ import 'photoswipe/dist/photoswipe.css';
 import 'photoswipe/dist/default-skin/default-skin.css';
 
 export default class Gallery extends React.Component {
-    state = {
-        gallery: null
-    };
+    // state = {
+    //     gallery: null
+    // };
     componentWillUnmount = () => {
         this.closeGallery();
     };
