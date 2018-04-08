@@ -1,4 +1,5 @@
 react 生命周期:https://www.jianshu.com/p/4784216b8194
+react mobx 一看就懂
 componentWillMount() {//dom生成前,可以setState
         alert("componentWillMount");
     }
