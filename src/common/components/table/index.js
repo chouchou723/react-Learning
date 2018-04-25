@@ -53,6 +53,7 @@ export default class Table extends React.Component {
         width: this.props.scroll ? 230 : maxActionCount * 50 + 10,
         fixed: this.props.fixed,
         render: (row) => {
+        
           const actions = action(row);
           if (!actions) {
             return <div />;
@@ -61,7 +62,7 @@ export default class Table extends React.Component {
             if (children) {
               return this.getActionItem({ color, name, key }, children, row)
             }
-            return (<Tooltip title={ name }><a
+            return (<Tooltip title={ name } key={name}><a
               key={key}
               onClick={(e) => {
                 e.preventDefault();

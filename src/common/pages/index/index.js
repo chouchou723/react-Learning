@@ -35,7 +35,7 @@ import './index.less'
     // }
 
     componentDidMount() {
-        console.log(this.props)
+        // console.log(this.props)
         // this.openNotificationWithIcon('info');
     }
 

@@ -7,7 +7,7 @@ import createBrowserHistory from 'history/createBrowserHistory'
 
 const customHistory = createBrowserHistory()
 let a = localStorage.getItem('login');
-console.log(a)
+// console.log(a)
 const to  = a==='1'?'/index':'/login';
 const routes = (
   <HashRouter history={customHistory} >

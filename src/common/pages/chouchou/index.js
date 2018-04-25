@@ -3,6 +3,8 @@
  */
 import React from 'react';
 import {Table, Switch, Radio, Form,DatePicker,Select ,Modal } from 'antd';
+import {observer,inject} from 'mobx-react';
+// import astore from '../../mobx/index.js'
 const { MonthPicker, RangePicker } = DatePicker;
 const Option = Select.Option;
 const children = [];
@@ -12,7 +14,7 @@ for (let i = 10; i < 36; i++) {
 
 const FormItem = Form.Item;
 
-
+// const aaaa = new astore();
 
 const data = [];
 for (let i = 1; i <= 10; i++) {
@@ -31,6 +33,7 @@ const showHeader = true;
 const footer = () => 'Here is footer';
 const scroll = { y: 240 };
 
+
 class Title extends React.Component{
     constructor(props){
         super(props);
@@ -40,7 +43,8 @@ class Title extends React.Component{
     }
     // abc = this.props.tfn
     componentWillMount(){
-        console.log(this.abc)
+        // console.log(this.props.Astore);
+
     }
     componentWillReceiveProps(nextProps) {//父级改变props之后 的第一步,state改变不会产生这步
         console.log(nextProps);
@@ -54,6 +58,7 @@ class Title extends React.Component{
     }
      componentWillUpdate() {//父级改变props之后 的第三步
         alert("componentWillUpdate");
+        // console.log(aaaa.tolist)
     }
    componentDidUpdate() {//父级改变props之后 的第三步之后 会先进入子组件的render,之后到该步
         alert("componentDidUpdate");
@@ -68,6 +73,8 @@ class Title extends React.Component{
             )
     }
 }
+
+@inject("store") @observer 
 class Demo extends React.Component {
     constructor(){
         super();
@@ -140,6 +147,11 @@ componentWillMount(){
     let data = [{value:1,text:'a'},{value:2,text:'b'}]
 this.setState({data})
 }
+
+componentDidMount(){
+   console.log(this.props);
+
+}
   handleToggle = (prop) => {
     return (enable) => {
       this.setState({ [prop]: enable });
@@ -153,7 +165,7 @@ this.setState({data})
     this.setState({
        [a]:conOne//字面量定义对象
     });
-    console.log(this.state)
+    // console.log(this.state)
 
   }
 
@@ -286,7 +298,7 @@ this.setState({data})
     </Select>
   </div>
   <div>
-      {this.state.Slite.map(item=><li>{item.value}</li>)}
+      {this.state.Slite.map((item,index)=><li key={index}>{item.value}</li>)}
   </div>
         <Table {...this.state} columns={columns} dataSource={data} />
         <div>

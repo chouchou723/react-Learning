@@ -41,6 +41,7 @@ export const todoList = handleActions({
     ]
   },
   'TOGGLE_TODO'(state, action) {
+    console.log(action)
     return state.map(t => todo(t, action.payload))
   },
   'DEL_TODO'(state, action) {
@@ -48,6 +49,10 @@ export const todoList = handleActions({
   },
   'AAA_TODO'(state, action) {
     console.log(action.val)
+    return state
+  },
+  'CHANGE_TODO'(state,action) {
+    console.log(action)
     return state
   }
 }, todoListInit)

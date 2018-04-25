@@ -65,6 +65,8 @@ export default class Music extends React.Component {
 
                 for (let i = 0; i < songList.length; i++) {
                     songArray.push({
+                        key:songList[i].album_id,
+                        id:songList[i].album_id,
                         title: songList[i].title,
                         author: songList[i].author,
                         country: songList[i].country,
@@ -102,6 +104,7 @@ export default class Music extends React.Component {
             onChange: (value) => this.fetchTableData(value),
             items: () => musicKindList.map(ele => ({
                 value: ele.value,
+                key: ele.value,
                 mean: ele.mean
             })),
         }, {
@@ -113,6 +116,7 @@ export default class Music extends React.Component {
                 value: 0,
                 mean: '全部'
             }].concat(publishCountry.map(ele => ({
+                key: ele.value,
                 value: ele.value,
                 mean: ele.mean
             }))),
@@ -122,9 +126,11 @@ export default class Music extends React.Component {
             type: 'select',
             defaultValue: '全部',
             items: () => [{
+                key: 0,
                 value: 0,
                 mean: '全部'
             }].concat(languageKindList.map(ele => ({
+                key: ele.value,
                 value: ele.value,
                 mean: ele.mean
             }))),
@@ -202,11 +208,28 @@ export default class Music extends React.Component {
                 title: '提示',
                 content: '确定删除吗',
                 onOk: () => {
+                    // console.log(item,this.state.tData)
+                    // let a = this.state.tData.filter(i=>{
+                    //         return   i.id!== item.id
+                    // })
+                    this.setState((prevState)=>{
+                        return {
+                            tData: prevState.tData.filter(i=>{
+                            return   i.id!== item.id
+                    })
+                        }
+                    })
                     message.success('删除成功')
                 },
                 onCancel() {}
             })
         }
+    }
+ componentWillUnmount(){ 
+        //重写组件的setState方法，直接返回空
+        this.setState = (state,callback)=>{
+          return;
+        };  
     }
 
     fields = () => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo,toggleTodo,delTodo,initFetch } from 'actions/todoList'
+import { addTodo,toggleTodo,delTodo,initFetch,changeTodo } from 'actions/todoList'
 import FilterLink from './filterLink'
 import './index.less'
 
@@ -58,8 +58,8 @@ class todoList extends React.Component {
             todos = todoList.filter(t => !t.completed)
         }
         return (
-            <div className="todo-box">
-            <Greeting />
+            <div className="todo-box"  onClick={e=>this.props.dispatch(changeTodo({todoList}))}>
+            <Greeting/>
                 <div className="todo-innerBox">
                     <div className="todo-tab" onClick={e=> this.props.dispatch(initFetch(this.props.setVisibility))}>
                         <FilterLink filter="SHOW_ALL" name="全部任务"></FilterLink>
