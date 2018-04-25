@@ -2,14 +2,7 @@
 > 使用React技术栈开发SPA.该项目把一些平时工作、学习中
 遇到的react案例抽离成demo展现出来.
 
-[效果展示](https://muyunyun.github.io/reactSPA)
 
-[文档地址](http://muyunyun.cn/posts/9bfbdbf4/)
-
-* 小模块展示：
-![](http://files.cnblogs.com/files/MuYunyun/reactSPA.gif)
-* redux在项目中的运用demo展示
-![](http://files.cnblogs.com/files/MuYunyun/todoList.gif)
 
 ### Usage
 ```
