@@ -1,5 +1,6 @@
 react 生命周期:https://www.jianshu.com/p/4784216b8194
 react mobx 一看就懂 https://blog.csdn.net/u012125579/article/details/69400169
+mobx http://eyehere.net/2016/mobx-getting-started/
 mobx demo :https://github.com/Hancoson/react-mobx-demo
 redux-thunk & redux-saga 用法及对比 https://segmentfault.com/a/1190000009928167
 普通的使用redux-action,
