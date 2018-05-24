@@ -1,4 +1,4 @@
-import {observable} from 'mobx';
+import {observable,computed} from 'mobx';
 
  class Astore {
 	// @observable tolist = [{
@@ -9,6 +9,12 @@ import {observable} from 'mobx';
 	// 	done:false
 	// }]
 	 @observable title = "123";
+	 @computed get getList(){
+
+	 }
+	 addList(){
+	 	
+	 }
 }
 const astore = new Astore()
 export  {astore}

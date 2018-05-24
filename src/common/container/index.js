@@ -6,10 +6,12 @@ import Top from './header'
 import Contents from './content'
 import Footer from './bottom'
 import './index.less'
+import {observer,inject} from 'mobx-react';
 
 const SubMenu = Menu.SubMenu;
 const { Sider } = Layout
 
+@inject("store") @observer 
 export default class Container extends React.Component {
   state = {
     theme: 'dark',
@@ -52,7 +54,7 @@ export default class Container extends React.Component {
         >
           { this.state.theme === 'light' ? <a href="https://github.com/chouchou723" target='_blank'><Icon type="github" className="github" /></a> :
           <a href="https://github.com/chouchou723" target='_blank'><Icon type="github" className="github white" /></a> }
-          { this.state.theme === 'light' ? <span className="author">Chouchou</span> : <span className="author white">ChouChou</span> }
+          { this.state.theme === 'light' ? <span className="author">{this.props.store.astore.title}</span> : <span className="author white">ChouChou</span> }
           <Menu
             theme={this.state.theme}
             onClick={this.handleClick}

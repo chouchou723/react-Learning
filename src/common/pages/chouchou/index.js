@@ -193,6 +193,7 @@ componentDidMount(){
     this.setState({ scroll: enable ? scroll : undefined });
   }
   conOne=()=>{
+    this.props.store.astore.title =1;
     console.log('one')
   }
     onChange=(date, dateString)=> {
